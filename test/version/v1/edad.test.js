@@ -1,14 +1,22 @@
-describe("test del archivo voltaje.js", () => {
-  test("La función votaje devuelve un string", () => {
-    let app = voltaje();
-    expect(typeof app).toBe("number");
+import { edad } from "../../../version/v1/edad";
+
+describe("test del archivo edad.js", () => {
+  test("La función edad devuelve un string", () => {
+    let edades = [1, 6, 3];
+    let nombres = ["Andrés", "David", "Sergio"];
+    let app = edad(nombres, edades);
+    expect(typeof app).toBe("string");
   });
-  test("La función votaje devuelve 20", () => {
-    let app = voltaje(2, 10);
-    expect(app).toBe(20);
+  test("La función edad devuelve que Sergio es la persona mayor", () => {
+    let edades = [1, 6, 3];
+    let nombres = ["Andrés", "David", "Sergio"];
+    let app = edad(nombres, edades);
+    expect(app).toBe("David es la persona con más edad (6 años)");
   });
-  test("La función votaje devuelve 10", () => {
-    let app = voltaje(2, 5);
-    expect(app).toBe(10);
+  test("La función edad devuelve que Andrés es la persona mayor", () => {
+    let edades = [5, 2, 3];
+    let nombres = ["Andrés", "David", "Sergio"];
+    let app = edad(nombres, edades);
+    expect(app).toBe("Andrés es la persona con más edad (5 años)");
   });
 });
